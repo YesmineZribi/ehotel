@@ -14,12 +14,12 @@ https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/re
 <br/>
 <br/>
 About the project: <br/>
-<strong>Goal:<strong><br/>
+<strong>Goal:</strong><br/>
 <br/>
 This project’s goal is to develop an application that allows customers to book hotel rooms from five different hotel chains. The application has three components, the database, the server-side and the client side. We used PostgreSQL for the implementation of the database, Java for the server-side application, HTML for the client-side application, and Apache Tomcat for the client-server communication.<br/>
 <br/>
 <br/>
-<strong>Project Overview:<strong><br/>
+<strong>Project Overview:</strong><br/>
 The application consists of three users: customers, employees and an administrator.<br/>
 
 <strong>Administrator account: To login as administrator: SSN: admin password: passadmin<strong><br/>
