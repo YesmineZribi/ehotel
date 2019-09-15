@@ -24,7 +24,7 @@ The application consists of three users: customers, employees and an administrat
 
 <strong>Administrator account: To login as administrator: SSN: admin password: passadmin</strong><br/>
 <br/>
-The administrator oversees information about the hotel chains. Particularly, the administrator can see all information pertinent to hotel chains, that is their emails, phone numbers as well as central offices’ addresses. The administrator can also see the hotels owned by the current hotel chains, as well as add and delete hotels owned by a specific chain. Furthermore, the administrator can see two views. View 1: the number of available rooms per area. View 2: the capacity of rooms of specific hotels. An administrator cannot delete their account.<br/>
+The administrator oversees information about the hotel chains. Particularly, the administrator can see all information pertinent to hotel chains, that is their emails, phone numbers as well as central offices’ addresses. The administrator can also see the hotels owned by the current hotel chains, as well as add and delete hotels owned by a specific chain. Furthermore, the administrator can see two views.<br/>
 <br/>
 <br/>
 <u>Customer account</u>: After signing up customers can access their information by logging in, the customer’s account allows customers to modify their information, see their current bookings and rents, and search for rooms based on different criteria. Once customers find a room of their liking, the can make a booking. A customer cannot delete their account unless all their rents are paid.<br/>
