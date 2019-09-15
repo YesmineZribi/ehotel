@@ -16,7 +16,6 @@ https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/re
 About the project: <br/>
 <br/>
 <strong>Goal:</strong><br/>
-<br/>
 This project’s goal is to develop an application that allows customers to book hotel rooms from five different hotel chains. The application has three components, the database, the server-side and the client side. We used PostgreSQL for the implementation of the database, Java for the server-side application, HTML for the client-side application, and Apache Tomcat for the client-server communication.<br/>
 <br/>
 <br/>
