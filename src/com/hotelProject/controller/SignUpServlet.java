@@ -21,6 +21,7 @@ import com.hotelProject.model.AccountManagement;
 @WebServlet("/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String ipAddress = "24.202.253.67";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -81,7 +82,7 @@ public class SignUpServlet extends HttpServlet {
 		
 		if(!added) { //failed, redirect back to log in
 			failedMessage = "Could not add customer, either customer already exists or one of your inputs was invalid";
-			response.sendRedirect("http://localhost:8080/HotelProject/login_signup.jsp?message="+message+"&failed_message="+failedMessage);
+			response.sendRedirect("http://"+ipAddress+":8080/HotelProject/login_signup.jsp?message="+message+"&failed_message="+failedMessage);
 			
 		} else { //succeeded, go to profile
 			message = "Customer added successfully!";
@@ -126,7 +127,7 @@ public class SignUpServlet extends HttpServlet {
 		
 		if (!added) {
 			failedMessage = "Could not add customer, either customer already exists or one of your inputs was invalid";
-			response.sendRedirect("http://localhost:8080/HotelProject/login_signup.jsp?message="+message+"&failed_message="+failedMessage);
+			response.sendRedirect("http://"+ipAddress+":8080/HotelProject/login_signup.jsp?message="+message+"&failed_message="+failedMessage);
 		} else {
 			message = "Employee added successfully!";
 			response.sendRedirect("EmployeeProfileDisplayServlet?ssn="+e.getSsn()+"&password="+e.getPassword()+"&user=employee&message="+message+"&failedMessage="+failedMessage);

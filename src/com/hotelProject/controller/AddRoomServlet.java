@@ -18,6 +18,7 @@ import com.hotelProject.model.HotelAndRoomManagement;
 @WebServlet("/AddRoomServlet")
 public class AddRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String ipAddress = "http://192.168.0.38";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -70,7 +71,7 @@ public class AddRoomServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		//redirect to DisplayHandRServlet
-		response.sendRedirect("http://localhost:8080/HotelProject/DisplayHandRServlet?hotel_id="+hotelID+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
+		response.sendRedirect("http://"+ipAddress+":8080/HotelProject/DisplayHandRServlet?hotel_id="+hotelID+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
 
 		try {
 			hr.getConnection().close();

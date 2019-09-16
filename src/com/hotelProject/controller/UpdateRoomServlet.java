@@ -21,6 +21,7 @@ import com.hotelProject.model.HotelAndRoomManagement;
 @WebServlet("/UpdateRoomServlet")
 public class UpdateRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String ipAddress = "24.202.253.67";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -135,7 +136,7 @@ public class UpdateRoomServlet extends HttpServlet {
 		boolean updatedRoomNum = hr.modifyRoomNumber(hotelID, oldRoomNumber, newRoomNumber);
 		if (!updatedRoomNum) {
 			failedMessage = "The room number you are trying to input already exists";
-			response.sendRedirect("http://localhost:8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+hotelID+"&room_number="+oldRoomNumber+"&capacity="+capacity+"&is_extended="+isExtended+"&price="+price+"&problem="+problem+"&view_type="+viewType+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
+			response.sendRedirect("http://"+ipAddress+":8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+hotelID+"&room_number="+oldRoomNumber+"&capacity="+capacity+"&is_extended="+isExtended+"&price="+price+"&problem="+problem+"&view_type="+viewType+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
 			return;
 		}
 		
@@ -154,7 +155,7 @@ public class UpdateRoomServlet extends HttpServlet {
 		}
 		
 		//Send back to RoomInfoDisplayServlet
-		response.sendRedirect("http://localhost:8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+hotelID+"&room_number="+oldRoomNumber+"&capacity="+capacity+"&is_extended="+isExtended+"&price="+price+"&problem="+problem+"&view_type="+viewType+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
+		response.sendRedirect("http://"+ipAddress+":8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+hotelID+"&room_number="+oldRoomNumber+"&capacity="+capacity+"&is_extended="+isExtended+"&price="+price+"&problem="+problem+"&view_type="+viewType+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
 
 		try {
 			hr.getConnection().close();
@@ -192,7 +193,7 @@ public class UpdateRoomServlet extends HttpServlet {
 		Room room = hr.getRoom(amenity.getHotelID(), amenity.getRoomNumber());
 		
 		//Redirect to DisplayRoomInfoServlet 
-		response.sendRedirect("http://localhost:8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+room.getHotelID()+"&room_number="+room.getRoomNumber()+"&capacity="+room.getCapacity()+"&is_extended="+room.getIsExtended()+"&price="+room.getPrice()+"&problem="+room.getProblem()+"&view_type="+room.getViewType()+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
+		response.sendRedirect("http://"+ipAddress+":8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+room.getHotelID()+"&room_number="+room.getRoomNumber()+"&capacity="+room.getCapacity()+"&is_extended="+room.getIsExtended()+"&price="+room.getPrice()+"&problem="+room.getProblem()+"&view_type="+room.getViewType()+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
 		
 		try {
 			hr.getConnection().close();
@@ -225,7 +226,7 @@ public class UpdateRoomServlet extends HttpServlet {
 		boolean validWord = pattern.matcher(type).matches();
 		if (!validWord) {
 			failedMessage = "This is not a valid word, please input a valid amenity type";
-			response.sendRedirect("http://localhost:8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+room.getHotelID()+"&room_number="+room.getRoomNumber()+"&capacity="+room.getCapacity()+"&is_extended="+room.getIsExtended()+"&price="+room.getPrice()+"&problem="+room.getProblem()+"&view_type="+room.getViewType()+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
+			response.sendRedirect("http://"+ipAddress+":8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+room.getHotelID()+"&room_number="+room.getRoomNumber()+"&capacity="+room.getCapacity()+"&is_extended="+room.getIsExtended()+"&price="+room.getPrice()+"&problem="+room.getProblem()+"&view_type="+room.getViewType()+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
 			return;
 		}
 		
@@ -243,7 +244,7 @@ public class UpdateRoomServlet extends HttpServlet {
 		}
 		
 		//redirect to RoomInfoDisplay 
-		response.sendRedirect("http://localhost:8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+room.getHotelID()+"&room_number="+room.getRoomNumber()+"&capacity="+room.getCapacity()+"&is_extended="+room.getIsExtended()+"&price="+room.getPrice()+"&problem="+room.getProblem()+"&view_type="+room.getViewType()+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
+		response.sendRedirect("http://"+ipAddress+":8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+room.getHotelID()+"&room_number="+room.getRoomNumber()+"&capacity="+room.getCapacity()+"&is_extended="+room.getIsExtended()+"&price="+room.getPrice()+"&problem="+room.getProblem()+"&view_type="+room.getViewType()+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
 		
 		try {
 			hr.getConnection().close();

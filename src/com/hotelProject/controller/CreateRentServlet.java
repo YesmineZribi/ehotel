@@ -31,6 +31,7 @@ import com.hotelProject.model.SearchRooms;
 @WebServlet("/CreateRentServlet")
 public class CreateRentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String ipAddress = "http://192.168.0.38";
 	
 
 
@@ -162,7 +163,7 @@ public class CreateRentServlet extends HttpServlet {
 					}
 					amenities += " (price of amenities is already included)";
 					
-					response.sendRedirect("http://localhost:8080/HotelProject/add_rent.jsp?employee_ssn="+ssn+"&hotel_id="+hotelID+"&room_number="+roomSelected.getRoomNumber()+"&room_price="+roomSelected.getPrice()+"&room_capacity="+roomSelected.getCapacity()+"&view_type="+roomSelected.getViewType()+"&is_extended="+roomSelected.getIsExtended()+"&problem="+roomSelected.getProblem()+"&employee_password="+employee.getPassword()+"&start_date="+sDate+"&end_date="+eDate+"&amenities="+amenities);
+					response.sendRedirect("http://"+ipAddress+":8080/HotelProject/add_rent.jsp?employee_ssn="+ssn+"&hotel_id="+hotelID+"&room_number="+roomSelected.getRoomNumber()+"&room_price="+roomSelected.getPrice()+"&room_capacity="+roomSelected.getCapacity()+"&view_type="+roomSelected.getViewType()+"&is_extended="+roomSelected.getIsExtended()+"&problem="+roomSelected.getProblem()+"&employee_password="+employee.getPassword()+"&start_date="+sDate+"&end_date="+eDate+"&amenities="+amenities);
 				}
 			}
 			

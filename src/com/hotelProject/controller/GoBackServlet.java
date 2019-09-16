@@ -18,6 +18,7 @@ import com.hotelProject.model.AccountManagement;
 @WebServlet("/GoBackServlet")
 public class GoBackServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String ipAddress = "24.202.253.67";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -65,7 +66,7 @@ public class GoBackServlet extends HttpServlet {
 		
 		if (selectedRoomInfoButton != null) {
 			//Go back to Customer profile 
-			gobackToCus(request,response);
+			gobackToCust(request,response);
 			//return 
 			return;
 		}
@@ -97,7 +98,7 @@ public class GoBackServlet extends HttpServlet {
 		String message, failedMessage; 
 		message = failedMessage = "";
 		
-		response.sendRedirect("http://localhost:8080/HotelProject/DisplayHandRServlet?hotel_id="+hotelID+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
+		response.sendRedirect("http://"+ipAddress+":8080/HotelProject/DisplayHandRServlet?hotel_id="+hotelID+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
 
 		
 	}
@@ -125,7 +126,7 @@ public class GoBackServlet extends HttpServlet {
 	 */
 	protected void gobackToLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.sendRedirect("http://localhost:8080/HotelProject/login_signup.jsp");
+		response.sendRedirect("http://"+ipAddress+":8080/HotelProject/login_signup.jsp");
 		
 		
 	}
@@ -134,7 +135,7 @@ public class GoBackServlet extends HttpServlet {
 	/**
 	 * Go back to CustomerProfileDisplayServlet
 	 */
-	protected void gobackToCus(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void gobackToCust(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Get the fields necessary 
 		String customerSSN = request.getParameter("customer_ssn");
 		

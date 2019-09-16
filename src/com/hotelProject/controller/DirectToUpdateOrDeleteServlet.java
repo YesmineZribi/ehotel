@@ -19,6 +19,7 @@ import com.hotelProject.model.HotelAndRoomManagement;
 @WebServlet("/DirectToUpdateOrDeleteServlet")
 public class DirectToUpdateOrDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String ipAddress = "24.202.253.67";
 
        
     /**
@@ -101,7 +102,7 @@ public class DirectToUpdateOrDeleteServlet extends HttpServlet {
 	 */
 	protected void updateRoom(String hotelID, Room room, String employeeSSN, String password, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Redirect to DisplayRoomServlet 
-		response.sendRedirect("http://localhost:8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+hotelID+"&room_number="+room.getRoomNumber()+"&capacity="+room.getCapacity()+"&is_extended="+room.getIsExtended()+"&price="+room.getPrice()+"&problem="+room.getProblem()+"&view_type="+room.getViewType()+"&employee_ssn="+employeeSSN+"&password="+password);
+		response.sendRedirect("http://"+ipAddress+":8080/HotelProject/RoomInfoDisplayServlet?hotel_id="+hotelID+"&room_number="+room.getRoomNumber()+"&capacity="+room.getCapacity()+"&is_extended="+room.getIsExtended()+"&price="+room.getPrice()+"&problem="+room.getProblem()+"&view_type="+room.getViewType()+"&employee_ssn="+employeeSSN+"&password="+password);
 	}
 	
 	/**
@@ -131,7 +132,7 @@ public class DirectToUpdateOrDeleteServlet extends HttpServlet {
 		}
 		
 		//Redirect to DisplayHandRServlet
-		response.sendRedirect("http://localhost:8080/HotelProject/DisplayHandRServlet?hotel_id="+hotelID+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
+		response.sendRedirect("http://"+ipAddress+":8080/HotelProject/DisplayHandRServlet?hotel_id="+hotelID+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
 
 		try {
 			hr.getConnection().close();

@@ -23,6 +23,7 @@ import com.hotelProject.model.HotelAndRoomManagement;
 @WebServlet("/UpdateHotelServlet")
 public class UpdateHotelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String ipAddress = "24.202.253.67";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -163,7 +164,7 @@ public class UpdateHotelServlet extends HttpServlet {
 	
 		} catch(NumberFormatException  e) {
 			failedMessage = "Illegal format for street number, please enter a valid street number";
-			response.sendRedirect("http://localhost:8080/HotelProject/DisplayHandRServlet?hotel_id="+hotelID+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
+			response.sendRedirect("http://"+ipAddress+":8080/HotelProject/DisplayHandRServlet?hotel_id="+hotelID+"&message="+message+"&failed_message="+failedMessage+"&employee_ssn="+employeeSSN+"&password="+password);
 			return ; 
 		}
 		

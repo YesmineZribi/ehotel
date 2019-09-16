@@ -149,10 +149,11 @@
 				pageContext.setAttribute("areas", areas);
 				
 			%>
+			<!--  
 			Preferred Areas: <br>
 			<c:forEach var="area" items="${areas}">
 				<input type="checkbox" name="preferred_area" value="${area}"/>${area} <br>				
-			</c:forEach>
+			</c:forEach> -->
 			
 			<input type="hidden" name="customer_ssn" value="${customer.ssn}">
 			<p align=center><input type="submit" value="Search For Rooms" /></p>

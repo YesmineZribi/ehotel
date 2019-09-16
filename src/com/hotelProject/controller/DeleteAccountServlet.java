@@ -19,6 +19,7 @@ import com.hotelProject.model.AccountManagement;
 @WebServlet("/DeleteAccountServlet")
 public class DeleteAccountServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String ipAddress = "http://192.168.0.38";
 
        
     /**
@@ -84,7 +85,7 @@ public class DeleteAccountServlet extends HttpServlet {
 			
 		} else {
 			message = "Account successfully deleted...sorry to see you go";
-			response.sendRedirect("http://localhost:8080/HotelProject/login_signup.jsp?message="+message+"&failed_message="+failedMessage);
+			response.sendRedirect("http://"+ipAddress+":8080/HotelProject/login_signup.jsp?message="+message+"&failed_message="+failedMessage);
 		}
 		
 		try {
@@ -119,7 +120,7 @@ public class DeleteAccountServlet extends HttpServlet {
 			
 		} else {
 			message = "Account deleted...sorry to see you go";
-			response.sendRedirect("http://localhost:8080/HotelProject/login_signup.jsp?message="+message+"&failed_message="+failedMessage);
+			response.sendRedirect("http://"+ipAddress+":8080/HotelProject/login_signup.jsp?message="+message+"&failed_message="+failedMessage);
 
 			
 		}
