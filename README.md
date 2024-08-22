@@ -1,8 +1,6 @@
 # ehotel
 Hotel-Booking Application using Java and PostgreSQL <br/>
 
-To access: http://ehotel.cf/ <br/>
-
 To install from source: <br/>
 <br/>
 In order to run this web application, you will need to have three components installed:<br/>
