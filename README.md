@@ -1,5 +1,5 @@
 # ehotel
-Hotel-Booking Application (CSI2132 - Database 1 project Winter 2019)<br/>
+Hotel-Booking Application using Java and PostgreSQL <br/>
 
 To access: http://ehotel.cf/ <br/>
 
